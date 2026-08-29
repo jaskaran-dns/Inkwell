@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+  }
+
+  ::selection {
+    background-color: theme("colors.oxblood");
+    color: theme("colors.paper");
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.oxblood");
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* The masthead rule: a heavy-over-hairline double border, a small nod to
+     letterpress mastheads without literally imitating any existing brand. */
+  .masthead-rule {
+    border-top: 3px solid theme("colors.ink");
+    border-bottom: 1px solid theme("colors.line-strong");
+  }
+
+  /* Signature element: the ink-stamp mark used as the wordmark glyph. */
+  .stamp {
+    @apply inline-flex items-center justify-center rounded-full border border-ink text-ink;
+    width: 1.75rem;
+    height: 1.75rem;
+    transform: rotate(-4deg);
+  }
+
+  .eyebrow {
+    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-soft;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-sm bg-ink px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-oxblood-dark;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-sm border border-ink px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-oxblood hover:text-oxblood;
+  }
+
+  .prose-article {
+    @apply font-serif text-[1.15rem] leading-[1.75] text-ink;
+  }
+
+  .prose-article p {
+    @apply mb-6;
+  }
+
+  .prose-article h2 {
+    @apply mt-12 mb-4 text-2xl;
+  }
+
+  .prose-article h3 {
+    @apply mt-8 mb-3 text-xl;
+  }
+
+  .prose-article blockquote {
+    @apply my-6 border-l-2 border-oxblood pl-5 italic text-ink-soft;
+  }
+
+  .prose-article code {
+    @apply rounded-sm bg-paper-dim px-1.5 py-0.5 font-sans text-[0.9em];
+  }
+
+  .prose-article pre {
+    @apply my-6 overflow-x-auto rounded-sm bg-ink px-4 py-4 text-paper;
+  }
+}
