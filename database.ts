@@ -11,4 +11,4 @@
  * exist yet.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type Database = supabase;
+export type Database = any;
