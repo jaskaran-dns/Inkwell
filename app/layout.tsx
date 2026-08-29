@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Source_Serif_4, Inter } from "next/font/google";
 import "./globals.css";
-import { Header } from "../app/Header";
-import { Footer } from "../app/Footer";
+import { Header } from "../Header";
+import { Footer } from "../Footer";
 
 const display = Fraunces({
   subsets: ["latin"],
