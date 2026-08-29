@@ -1,5 +1,5 @@
 import { createBrowserClient } from "@supabase/ssr";
-import type { Database } from "@types/database";
+import type { Database } from "../database";
 
 /**
  * Client-side Supabase instance. Only ever holds the public anon key,
